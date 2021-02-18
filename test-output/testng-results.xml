@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="84490" started-at="2021-02-15T08:34:39 PST" finished-at="2021-02-15T08:36:04 PST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="84490" started-at="2021-02-15T08:34:39 PST" finished-at="2021-02-15T08:36:04 PST">
+      <class name="product_validation.main">
+        <test-method status="PASS" signature="browserinitialization()[pri:0, instance:product_validation.main@56aac163]" name="browserinitialization" is-config="true" duration-ms="47945" started-at="2021-02-15T08:33:51 PST" finished-at="2021-02-15T08:34:39 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserinitialization -->
+        <test-method status="PASS" signature="loginval()[pri:1, instance:product_validation.main@56aac163]" name="loginval" duration-ms="17649" started-at="2021-02-15T08:34:39 PST" finished-at="2021-02-15T08:34:57 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginval -->
+        <test-method status="PASS" signature="acMyprofile()[pri:2, instance:product_validation.main@56aac163]" name="acMyprofile" duration-ms="12105" started-at="2021-02-15T08:34:57 PST" finished-at="2021-02-15T08:35:09 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- acMyprofile -->
+        <test-method status="PASS" signature="hotelsearch()[pri:3, instance:product_validation.main@56aac163]" name="hotelsearch" duration-ms="41885" started-at="2021-02-15T08:35:09 PST" finished-at="2021-02-15T08:35:51 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hotelsearch -->
+        <test-method status="FAIL" signature="flight()[pri:4, instance:product_validation.main@56aac163]" name="flight" duration-ms="12386" started-at="2021-02-15T08:35:51 PST" finished-at="2021-02-15T08:36:04 PST">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">...</a> is not clickable at point (327, 179). Other element would receive the click: <div id="select2-drop-mask" class="select2-drop-mask" style=""></div>
+  (Session info: chrome=88.0.4324.150)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-L37E01M', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\PRABHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 98c9d8cf302ecdde68020078deab55dc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">...</a> is not clickable at point (327, 179). Other element would receive the click: <div id="select2-drop-mask" class="select2-drop-mask" style=""></div>
+  (Session info: chrome=88.0.4324.150)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-L37E01M', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\PRABHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 98c9d8cf302ecdde68020078deab55dc
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy9.click(Unknown Source)
+at product_validation.main.flight(main.java:192)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight -->
+        <test-method status="PASS" signature="afttst()[pri:0, instance:product_validation.main@56aac163]" name="afttst" is-config="true" duration-ms="2" started-at="2021-02-15T08:36:04 PST" finished-at="2021-02-15T08:36:04 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afttst -->
+      </class> <!-- product_validation.main -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
