@@ -157,7 +157,7 @@ public class main {
 	
 	}
 	@Test(priority=4)
-	void flight() {
+	void flight() throws InterruptedException {
 		PageFactory.initElements(driver,dataroot.class);
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		 wait.until(ExpectedConditions.elementToBeClickable(dataroot.homeFlightClk));
@@ -178,20 +178,23 @@ public class main {
 			driver.findElement(By.xpath("//*[@id='flights']/div/div/form/div/div/div[1]/div[2]/div/div/a")).click();
 			driver.findElement(By.xpath("//*[@class='chosen-results']/li[1]")).click();
 		}
-		/*dataroot.fltFrom.click();
+		dataroot.fltFrom.click();
 		driver.findElement(By.xpath("//*[@id='select2-drop']/div/input")).sendKeys("New");
-		WebDriverWait wit = new WebDriverWait(driver,30);
-		List <WebElement>	ela =  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='select2-drop']/ul/li")));
+		/*WebDriverWait wit = new WebDriverWait(driver,30);
+		wit.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='select2-drop']/ul/li[1]")));*/
+		Thread.sleep(1000);
+		List <WebElement>	ela =  driver.findElements(By.xpath("//*[@id='select2-drop']/ul/li"));
 		for (WebElement webElement : ela) {
 			System.out.println(webElement.getText());
 			if(webElement.getText().equals("Newcastle (NCS)")) {
 				webElement.click();
 				break;
 			}
-		}*/
+		}
 		dataroot.fltFromOut.click();
 		dataroot.flightOtInp.sendKeys("New");
-		List <WebElement>	fltout =  wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='select2-drop']/ul/li")));
+		WebDriverWait witt = new WebDriverWait(driver,30);
+		List <WebElement>	fltout =  witt.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='select2-drop']/ul/li")));
 		for (WebElement webElement : fltout) {
 			if(webElement.getText().equals("Newport (NPT)")) {
 				webElement.click();
@@ -216,7 +219,7 @@ public class main {
 					System.out.println(webElement.getText());
 					if(webElement.getText().equals(expectdt)) {
 						boolean dt=  webElement.isEnabled();
-						if(dt=true) {
+						if(dt==true) {
 							webElement.click();
 							break;
 						}

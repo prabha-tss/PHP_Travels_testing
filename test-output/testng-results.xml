@@ -2,46 +2,46 @@
 <testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="84490" started-at="2021-02-15T08:34:39 PST" finished-at="2021-02-15T08:36:04 PST">
+  <suite name="Default suite" duration-ms="89383" started-at="2021-02-18T03:04:56 PST" finished-at="2021-02-18T03:06:25 PST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="84490" started-at="2021-02-15T08:34:39 PST" finished-at="2021-02-15T08:36:04 PST">
+    <test name="Default test" duration-ms="89383" started-at="2021-02-18T03:04:56 PST" finished-at="2021-02-18T03:06:25 PST">
       <class name="product_validation.main">
-        <test-method status="PASS" signature="browserinitialization()[pri:0, instance:product_validation.main@56aac163]" name="browserinitialization" is-config="true" duration-ms="47945" started-at="2021-02-15T08:33:51 PST" finished-at="2021-02-15T08:34:39 PST">
+        <test-method status="PASS" signature="browserinitialization()[pri:0, instance:product_validation.main@56aac163]" name="browserinitialization" is-config="true" duration-ms="71695" started-at="2021-02-18T03:03:44 PST" finished-at="2021-02-18T03:04:56 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserinitialization -->
-        <test-method status="PASS" signature="loginval()[pri:1, instance:product_validation.main@56aac163]" name="loginval" duration-ms="17649" started-at="2021-02-15T08:34:39 PST" finished-at="2021-02-15T08:34:57 PST">
+        <test-method status="PASS" signature="loginval()[pri:1, instance:product_validation.main@56aac163]" name="loginval" duration-ms="19504" started-at="2021-02-18T03:04:56 PST" finished-at="2021-02-18T03:05:15 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginval -->
-        <test-method status="PASS" signature="acMyprofile()[pri:2, instance:product_validation.main@56aac163]" name="acMyprofile" duration-ms="12105" started-at="2021-02-15T08:34:57 PST" finished-at="2021-02-15T08:35:09 PST">
+        <test-method status="PASS" signature="acMyprofile()[pri:2, instance:product_validation.main@56aac163]" name="acMyprofile" duration-ms="10681" started-at="2021-02-18T03:05:16 PST" finished-at="2021-02-18T03:05:26 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- acMyprofile -->
-        <test-method status="PASS" signature="hotelsearch()[pri:3, instance:product_validation.main@56aac163]" name="hotelsearch" duration-ms="41885" started-at="2021-02-15T08:35:09 PST" finished-at="2021-02-15T08:35:51 PST">
+        <test-method status="PASS" signature="hotelsearch()[pri:3, instance:product_validation.main@56aac163]" name="hotelsearch" duration-ms="41227" started-at="2021-02-18T03:05:26 PST" finished-at="2021-02-18T03:06:07 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- hotelsearch -->
-        <test-method status="FAIL" signature="flight()[pri:4, instance:product_validation.main@56aac163]" name="flight" duration-ms="12386" started-at="2021-02-15T08:35:51 PST" finished-at="2021-02-15T08:36:04 PST">
+        <test-method status="FAIL" signature="flight()[pri:4, instance:product_validation.main@56aac163]" name="flight" duration-ms="17347" started-at="2021-02-18T03:06:07 PST" finished-at="2021-02-18T03:06:25 PST">
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[element click intercepted: Element <a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">...</a> is not clickable at point (327, 179). Other element would receive the click: <div id="select2-drop-mask" class="select2-drop-mask" style=""></div>
+              <![CDATA[element click intercepted: Element <input id="FlightsDateStart" class="form-control form-readonly-control" placeholder="Depart" name="departure_date" value="" readonly=""> is not clickable at point (422, 96). Other element would receive the click: <div id="select2-drop-mask" class="select2-drop-mask" style="display: block;"></div>
   (Session info: chrome=88.0.4324.150)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-L37E01M', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+System info: host: 'DESKTOP-L37E01M', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\PRABHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 98c9d8cf302ecdde68020078deab55dc]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\PRABHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53386}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 28a5d60172e5a40e4032f6ac9bdc5284]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">...</a> is not clickable at point (327, 179). Other element would receive the click: <div id="select2-drop-mask" class="select2-drop-mask" style=""></div>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input id="FlightsDateStart" class="form-control form-readonly-control" placeholder="Depart" name="departure_date" value="" readonly=""> is not clickable at point (422, 96). Other element would receive the click: <div id="select2-drop-mask" class="select2-drop-mask" style="display: block;"></div>
   (Session info: chrome=88.0.4324.150)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-L37E01M', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+System info: host: 'DESKTOP-L37E01M', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\PRABHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 98c9d8cf302ecdde68020078deab55dc
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.150, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\PRABHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53386}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 28a5d60172e5a40e4032f6ac9bdc5284
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -54,13 +54,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at com.sun.proxy.$Proxy9.click(Unknown Source)
-at product_validation.main.flight(main.java:192)
+at product_validation.main.flight(main.java:204)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -95,7 +89,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flight -->
-        <test-method status="PASS" signature="afttst()[pri:0, instance:product_validation.main@56aac163]" name="afttst" is-config="true" duration-ms="2" started-at="2021-02-15T08:36:04 PST" finished-at="2021-02-15T08:36:04 PST">
+        <test-method status="PASS" signature="afttst()[pri:0, instance:product_validation.main@56aac163]" name="afttst" is-config="true" duration-ms="5" started-at="2021-02-18T03:06:25 PST" finished-at="2021-02-18T03:06:25 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afttst -->
