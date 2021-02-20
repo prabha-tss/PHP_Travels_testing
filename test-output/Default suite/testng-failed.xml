@@ -5,9 +5,9 @@
     <classes>
       <class name="product_validation.main">
         <methods>
-          <include name="flight"/>
           <include name="browserinitialization"/>
           <include name="afttst"/>
+          <include name="hotelsearch"/>
         </methods>
       </class> <!-- product_validation.main -->
     </classes>

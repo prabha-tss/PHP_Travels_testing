@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -16,6 +18,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -111,7 +114,9 @@ public class main {
 		PageFactory.initElements(driver,dataroot.class);
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(dataroot.Hoteldiv));
-		dataroot.Hoteldiv.click();
+		
+		Actions act = new Actions(driver);
+		act.moveToElement(dataroot.Hoteldiv).click().build().perform();
 		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='select2-drop']/ul/li[2]/ul/li[1]")));
 		
 	List <WebElement> hotellist =	driver.findElements(By.xpath("//*[@id='select2-drop']/ul/li[2]/ul/li"));
@@ -178,53 +183,138 @@ public class main {
 			driver.findElement(By.xpath("//*[@id='flights']/div/div/form/div/div/div[1]/div[2]/div/div/a")).click();
 			driver.findElement(By.xpath("//*[@class='chosen-results']/li[1]")).click();
 		}
-		dataroot.fltFrom.click();
+		
+		Actions act = new Actions(driver);
+		act.moveToElement(dataroot.fltFrom).click().build().perform();
 		driver.findElement(By.xpath("//*[@id='select2-drop']/div/input")).sendKeys("New");
-		/*WebDriverWait wit = new WebDriverWait(driver,30);
-		wit.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='select2-drop']/ul/li[1]")));*/
-		Thread.sleep(1000);
-		List <WebElement>	ela =  driver.findElements(By.xpath("//*[@id='select2-drop']/ul/li"));
-		for (WebElement webElement : ela) {
-			System.out.println(webElement.getText());
-			if(webElement.getText().equals("Newcastle (NCS)")) {
-				webElement.click();
-				break;
-			}
-		}
-		dataroot.fltFromOut.click();
-		dataroot.flightOtInp.sendKeys("New");
-		WebDriverWait witt = new WebDriverWait(driver,30);
-		List <WebElement>	fltout =  witt.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='select2-drop']/ul/li")));
-		for (WebElement webElement : fltout) {
-			if(webElement.getText().equals("Newport (NPT)")) {
-				webElement.click();
-				break;
-			}
-		}
-		driver.findElement(By.xpath("//*[@id='FlightsDateStart']")).click();
-		WebDriverWait dtwait = new WebDriverWait(driver,30);
-		List<WebElement> month =	 dtwait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class='datepicker--cells datepicker--cells-months']//div")));
-			 
-			for (WebElement webElement : month) {
-				if(webElement.getText().equals("Mar")) {
+		try {
+			WebDriverWait waitflightfrom = new WebDriverWait(driver,20);
+			waitflightfrom.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='select2-drop']/ul/li[2]")));	
+			List <WebElement>	ela= driver.findElements(By.xpath("//*[@id='select2-drop']/ul/li"));
+			System.out.println("li size"+ela.size());
+			for (WebElement webElement : ela) {
+				System.out.println(webElement.getText());
+				
+				if(webElement.getText().equals("Newcastle (NCS)")) {
 					webElement.click();
+					break;
 				}
 			}
 			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div")));
-			List<WebElement> date = driver.findElements(By.xpath("//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div"));
-			String expectdt = "5";
-				for (WebElement webElement : date) {
-					System.out.println("try");
-					System.out.println(webElement.getText());
-					if(webElement.getText().equals(expectdt)) {
-						boolean dt=  webElement.isEnabled();
-						if(dt==true) {
-							webElement.click();
-							break;
+		} catch (Exception e) {
+			WebDriverWait waitflightfrom = new WebDriverWait(driver,20);
+			waitflightfrom.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='select2-drop']/ul/li[1]")));
+		WebElement listvalue=	driver.findElement(By.xpath("//*[@id='select2-drop']/ul/li[1]"));
+			String chkval="Searching...";
+		if(!listvalue.equals(chkval)) {
+			System.out.println("catch");
+			if(listvalue.getText().equals("Newcastle (NCS)")) {
+				listvalue.click();
+				
+			}
+			}else {
+				waitflightfrom.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='select2-drop']/ul/li[1]")));
+				WebElement elslistvalue = driver.findElement(By.xpath("//*[@id='select2-drop']/ul/li[1]"));
+				if(elslistvalue.getText().equals("Newcastle (NCS)")) {
+					elslistvalue.click();
+					
+				}
+			}
+			
+		}
+		
+		
+		
+			WebDriverWait waitt = new WebDriverWait(driver,20);
+			 waitt.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='FlightsDateStart']")));
+			try {
+				driver.findElement(By.xpath("//*[@id='FlightsDateStart']")).click();
+				driver.findElement(By.xpath("//*[@id='datepickers-container']/div[9]/nav/div[2]")).click();
+			} catch (Exception e) {
+				driver.findElement(By.xpath("//*[@id='FlightsDateStart']")).click();
+				boolean cl = driver.findElement(By.xpath("//*[@id='datepickers-container']/div[9]/nav/div[2]")).isDisplayed();
+				if(cl==true) {
+					driver.findElement(By.xpath("//*[@id='datepickers-container']/div[9]/nav/div[2]")).click();
+				}else {
+					driver.findElement(By.xpath("//*[@id='FlightsDateStart']")).click();
+				driver.findElement(By.xpath("//*[@id='datepickers-container']/div[9]/nav/div[2]")).click();
+				}
+			}
+			WebDriverWait wait1 = new WebDriverWait(driver,30);
+			wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='datepicker--cells datepicker--cells-months']//div[1]")));
+			List<WebElement> month = driver.findElements(By.xpath("//*[@class='datepicker--cells datepicker--cells-months']//div"))	 ;
+			for (WebElement webElement : month) {
+				System.out.println(webElement.getText());
+				if(webElement.getText().equals("Mar")) {
+					Actions act1 = new Actions(driver);
+					try {
+						System.out.println("month clk try");
+						act1.moveToElement(webElement).click().build().perform();
+					} catch (Exception e) {
+						System.out.println("month clk catch");
+						webElement.click();
+					}
+					break;
+					
+				}
+			}
+			boolean dtpicDT = driver.findElement(By.xpath("//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div")).isDisplayed();
+			if(dtpicDT==true) {
+				List<WebElement> date = driver.findElements(By.xpath("//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div"));
+				
+				
+				try {
+					for (WebElement webElement : date) {
+						System.out.println("date try");
+						System.out.println(webElement.getText());
+						String expectdt = "5";
+						if(webElement.getText().equals(expectdt)) {
+							boolean dt=  webElement.isEnabled();
+							if(dt==true) {
+								webElement.click();
+								break;
+							}
+						}
+					}
+				} catch (Exception e) {
+					driver.findElement(By.xpath("//*[@id='datepickers-container']/div[9]"));
+					for (WebElement webElement : date) {
+						System.out.println("date Catch");
+						String expectdt = "5";
+						System.out.println(webElement.getText());
+						if(webElement.getText().equals(expectdt)) {
+							boolean dt=  webElement.isEnabled();
+							if(dt==true) {
+								webElement.click();
+								break;
+							}
 						}
 					}
 				}
+			}else {
+				try {
+					wait1.until(ExpectedConditions.visibilityOf((WebElement) By.xpath("//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div")));
+					List<WebElement> date = driver.findElements(By.xpath("//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div"));
+					for (WebElement webElement : date) {
+						System.out.println("date try");
+						System.out.println(webElement.getText());
+						String expectdt = "5";
+						if(webElement.getText().equals(expectdt)) {
+							boolean dt=  webElement.isEnabled();
+							if(dt==true) {
+								webElement.click();
+								break;
+							}
+						}
+					}
+					
+				} catch (Exception e) {
+					
+					//*[@id='datepickers-container']/div[9]/div/div[1]/div[2]//div
+				}
+			
+			}	
+			
 			
 	}
 	

@@ -73,7 +73,7 @@ public class dataroot {
 public static WebElement homeFlightClk;
 @FindBy(xpath="//*[@id='flightSearchRadio-2']")
 public static WebElement fltOwnWay;
-@FindBy(xpath="//*[@id='s2id_location_from']/a")
+@FindBy(xpath="//*[@id='s2id_location_from']")
 public static WebElement fltFrom;
 @FindBy(xpath="//*[@id='select2-drop']/ul/li")
 public static WebElement fltFromInp;
